@@ -14,6 +14,7 @@ nav>.itembox{
 	display:flex;
 	justify-content:flex-end;
 	margin:10px;
+	background-color:#d0d0d0;
 }
 .item{
 	flex:none;
@@ -39,10 +40,11 @@ main{
 main>.box{
 	flex:none;
 	width:270px;margin:10px;
-	background-color:#c48888;
+	background-color:#d9b3b3;
 }
 .title{
 	text-align:center;
+	font-size:20px;
 }
 img{width:270px;}
 @media (max-width:1200px){

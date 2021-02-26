@@ -21,11 +21,15 @@ nav>.itembox{
 
 .welcome{
 	height:300px;
-	background-color:#6b8e23;
+	background-color:#c48888;
 	font-weight:bold;font-size:40px;
 	text-align:center;
+	
 }
-
+label{
+	display:none;
+	width:1px
+}
 main{
 	width:1200px;margin-left:auto;margin-right:auto;
 	display:flex;flex-wrap:wrap;
@@ -34,7 +38,7 @@ main{
 main>.box{
 	flex:none;
 	width:270px;margin:10px;
-	background-color:#6b8e23;
+	background-color:#c48888;
 }
 .title{
 	text-align:center;
@@ -53,7 +57,18 @@ img{width:270px;}
 }
 
 @media (max-width:600px){
-	main.box{
+	nav>.itembox{
+		justify-content:center;
+		display:none;
+	}
+	label{
+		justify-content:flex-end;
+		margin:10px;
+		padding:10px;
+		flex:auto;
+		display:block;
+	}
+	main>.box{
 		width:90%;
 	}
 	img{

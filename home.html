@@ -4,9 +4,35 @@
 	<meta charset="utf-8"></meta>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Una's Floral Designs</title>
+    <script type="text/javascript">
+    function getData(){
+        var req=new XMLHttpRequest();
+        req.open("get","https://padax.github.io/taipei-day-trip-resources/taipei-attractions.json");
+        req.onload=function(){
+            var existParentNode=document.getElementsByTagName("main")
+            for (i=0;i<8;i++){
+                var newNode=document.createElement("div");
+                newNode.className="box";
+                existParentNode[0].appendChild(newNode);
+                var newImg=document.createElement("img");
+                newImg.src=JSON.parse(this.responseText)["result"]["results"][i]["file"].replace(/http:/g,"#http:").split("#")[1];
+                newImg.className="titlepic"
+                newNode.appendChild(newImg)
+                var newNode2=document.createElement("div");
+                newNode2.className="title";
+                newNode.appendChild(newNode2)
+                var nodeText=document.createTextNode(JSON.parse(this.responseText)["result"]["results"][i]["stitle"]);
+                newNode2.appendChild(nodeText);
+                
+            }
+
+        }
+        req.send();
+    }
+    </script>
 	<link href="style.css" rel="stylesheet" type="text/css" media="all" />
 </head>
-<body>
+<body onload="getData()">
 	<nav>
 		<div class="mywebsite">My Website</div>
 		<div class="itembox">
@@ -23,43 +49,8 @@
 		<span style="position:relative;top:120px;">Welcome to Una's Floral Designs</span>
 	</div>
 	<main>
-		<div class="box">
-			<img src="pic1.jpg" class="titlepic"/>
-			<div class="title">title1</div>
-		</div>
-		<div class="box">
-			<img src="pic2.jpg" class="titlepic"/>
-			<div class="title">title1</div>
-		</div>
-		<div class="box">
-			<img src="pic3.jpg" class="titlepic"/>
-			<div class="title">title1</div>
-		</div>
-		<div class="box">
-			<img src="pic4.jpg" class="titlepic"/>
-			<div class="title">title1</div>
-		</div>
-	</main>
-	<main>
-		<div class="box">
-			<img src="pic5.jpg" class="titlepic"/>
-			<div class="title">title1</div>
-		</div>
-		<div class="box">
-			<img src="pic6.jpg" class="titlepic"/>
-			<div class="title">title1</div>
-		</div>
-		<div class="box">
-			<img src="pic7.jpg" class="titlepic"/>
-			<div class="title">title1</div>
-		</div>
-		<div class="box">
-			<img src="pic8.jpg" class="titlepic"/>
-			<div class="title">title1</div>
-		</div>
+
 	</main>
 	
 </body>
 </html>
- 
-

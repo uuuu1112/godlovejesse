@@ -52,6 +52,10 @@ main>.box{
 	font-size:20px;
 }
 .titlepic{width:270px;height:210px;}
+button{
+	font-size:20px;font-weight:bold;padding:10px;margin:10px;margin-left:auto;margin-right:auto;flex-wrap:wrap;
+	justify-content:center;display:flex;
+}
 @media (max-width:1200px){
 	main>.box{
 		width:45%;

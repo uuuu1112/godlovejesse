@@ -78,10 +78,10 @@ main>.box{
 		flex:none;
 	}
 	main>.box{
-		width:90%;
+		width:90%;margin:20px;
 	}
 	.titlepic{
-		height:100%;margin:20px;
+		height:100%;
 	}
 	main{
 		width:100%;
